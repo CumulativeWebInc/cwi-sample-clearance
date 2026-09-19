@@ -1,0 +1,229 @@
+{
+  "banner": "INFORMATION ONLY — NOT LEGAL ADVICE. This tool reports what Cumulative Web Inc can verify from its own records. It does not grant permission, clear samples, or assess legal risk. Do not sample, interpolate, or release without written clearance from the rights holders. Consult a licensed attorney.",
+  "built_at": "2026-09-19",
+  "clearance_path": [
+    "Email CWI Business Affairs at hp@cumulativeweb.com — state the track, the exact portion you want to use, and the use type (sample, interpolation, or cover).",
+    "Business Affairs prepares a checklist of the documents needed (split sheets, master-control docs, sample attestations). They do not draft legal language or certify rights.",
+    "Clearance is granted in writing by the rights holders; a licensed attorney executes the license.",
+    "Do not release, distribute, or perform the new work until written clearance is in hand."
+  ],
+  "contact": {
+    "email": "hp@cumulativeweb.com",
+    "name": "CWI Business Affairs",
+    "observed_at": "2026-09-15",
+    "role": "Prepares checklists and tracks rights documents. Does NOT draft legal language, file, sign, or certify rights — a licensed attorney and Black execute.",
+    "source": "cwi-company/affairs/rights-gaps.md"
+  },
+  "ethics": "Information only. Never legal advice. Every answer hands off to CWI Business Affairs. Unverifiable questions fail closed.",
+  "global_gaps": {
+    "items": [
+      "ISRC inventory (per track) — missing; distributors and sync buyers key everything to ISRCs.",
+      "Writer / publishing splits — no signed split sheets on file for any track.",
+      "PRO affiliation — which performing-rights org covers the works is unknown; no publisher/work registration numbers on file.",
+      "Sample clearance status — no clearance letters and no sworn no-sample attestations on file for any track.",
+      "Master-control documentation — chain-of-title showing CWI/Black controls the masters is missing."
+    ],
+    "observed_at": "2026-09-15",
+    "source": "cwi-company/affairs/rights-gaps.md"
+  },
+  "product": "Sample-clearance checker (backlog #16)",
+  "schema": "cwi.sample-clearance/1.0",
+  "tracks": [
+    {
+      "aliases": [
+        "zootedzone"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-15",
+          "source": "CWI Medium articles (memory import 2026-09-15)",
+          "text": "Production credit on record: produced by Kokurcho; mixed/mastered by Hybrid at his Hagerstown, MD studio; recorded Hagerstown, Feb 2023.",
+          "tier": "press-claimed"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "A production credit is not a rights-holder record. The verified rights holders of the master and publishing cannot be confirmed from CWI's records.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "CWI's stated position: Black states CWI controls the masters and label music. No chain-of-title documentation is on file, so this cannot be verified.",
+          "tier": "stated-position"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "PRO affiliation: unknown. No publisher or work registration numbers on file.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "Sample attestation: no clearance letters and no sworn no-sample statement on file.",
+          "tier": "unverified"
+        }
+      ],
+      "spotify_id_observed_at": "2026-09-16",
+      "spotify_track_id": "0emH8ktA8x4DkOFLsG5xkW",
+      "title": "Zooted Zone"
+    },
+    {
+      "aliases": [
+        "diabolique"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-15",
+          "source": "MEMORY.md (owner-confirmed 2026-09-15)",
+          "text": "Production credit on record: produced by Hybrid, co-produced with Black.",
+          "tier": "stated-position"
+        },
+        {
+          "observed_at": "2026-09-18",
+          "source": "PRODUCT-BACKLOG.md #20",
+          "text": "Writer/publishing splits: UNVERIFIED as of 2026-09-18. No split percentages exist in CWI's records — any percentage you see elsewhere is not from us.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "The verified rights holders of the master and publishing cannot be confirmed from CWI's records.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "PRO affiliation: unknown. No publisher or work registration numbers on file.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "Sample attestation: no clearance letters and no sworn no-sample statement on file.",
+          "tier": "unverified"
+        }
+      ],
+      "spotify_id_observed_at": "2026-09-16",
+      "spotify_track_id": "2eSyWmIdPzEMyWejLb2LBj",
+      "title": "Diabolique"
+    },
+    {
+      "aliases": [
+        "flamerz"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-15",
+          "source": "MEMORY.md (owner-confirmed 2026-09-15)",
+          "text": "Production credit on record: producer is Jeck Da General (owner-confirmed 2026-09-15). A production credit is not a rights-holder record.",
+          "tier": "stated-position"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "The verified rights holders of the master and publishing cannot be confirmed from CWI's records.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "PRO affiliation: unknown. Sample attestation: none on file.",
+          "tier": "unverified"
+        }
+      ],
+      "title": "Flamerz"
+    },
+    {
+      "aliases": [
+        "idol or icon",
+        "idol-or-icon"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-15",
+          "source": "memory/people/jeck-da-general.md",
+          "text": "Production credit on record: co-produced by Black with Jeck Da General. A production credit is not a rights-holder record.",
+          "tier": "stated-position"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "The verified rights holders of the master and publishing cannot be confirmed from CWI's records.",
+          "tier": "unverified"
+        },
+        {
+          "observed_at": "2026-09-15",
+          "source": "cwi-company/affairs/rights-gaps.md",
+          "text": "PRO affiliation: unknown. Sample attestation: none on file.",
+          "tier": "unverified"
+        }
+      ],
+      "title": "Idol or Icon"
+    },
+    {
+      "aliases": [
+        "shaka zulu",
+        "shakazulu"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-19",
+          "source": "cwi.sample-clearance/1.0 data review",
+          "text": "No credits or rights information for this track is on file in CWI's records. Nothing about its rights holders, splits, PRO affiliation, or sample status can be verified.",
+          "tier": "unverified"
+        }
+      ],
+      "title": "Shaka Zulu"
+    },
+    {
+      "aliases": [
+        "doves & diamonds",
+        "doves and diamonds",
+        "dovesdiamonds"
+      ],
+      "facts": [
+        {
+          "observed_at": "2026-09-19",
+          "source": "cwi.sample-clearance/1.0 data review",
+          "text": "No credits or rights information for this track is on file in CWI's records. Nothing about its rights holders, splits, PRO affiliation, or sample status can be verified.",
+          "tier": "unverified"
+        }
+      ],
+      "title": "Doves & Diamonds"
+    }
+  ],
+  "use_types": {
+    "cover": {
+      "label": "Cover (your own recording of the song)",
+      "note": "A cover uses no original audio. In the US, audio-only releases are typically covered by a mechanical license through your distributor; video/sync uses need direct publishing clearance. CWI's publishing data is unverified — confirm the publisher with Business Affairs first."
+    },
+    "interpolate": {
+      "label": "Interpolation (re-record the melody/lyrics)",
+      "note": "Interpolation creates a new master recording, but the underlying composition still belongs to its writers. You need publishing clearance from the writers/publishers, in writing, before release."
+    },
+    "sample": {
+      "label": "Sample (use the original recording)",
+      "note": "Sampling uses the master recording. That means two separate permissions, both in writing, before release: the master (usually the label) AND the publishing (the writers and publishers)."
+    }
+  }
+}

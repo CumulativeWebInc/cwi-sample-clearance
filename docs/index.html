@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample-Clearance Checker · Cumulative Web Inc</title>
+<meta name="description" content="Can I sample this track? Verified rights facts with evidence tiers — information only, never legal advice.">
+<style>
+:root{--ink:#e8e8e8;--mut:#9a9aa0;--line:#2a2a30;--bg:#101014;--card:#17171d;--amber:#e0a32e;--green:#3fae6a;--red:#c65b5b;--blue:#5b8dd9}
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);margin:0;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 72px}
+header.top{text-align:center;margin-bottom:8px}
+h1{font-size:1.9rem;margin:0 0 6px;letter-spacing:-.01em}
+.tag{color:var(--mut);margin:0 0 18px}
+.banner{background:#2a2118;border:1px solid var(--amber);color:#f0d9a8;border-radius:12px;padding:14px 18px;font-size:.88rem;margin:18px 0}
+.banner strong{color:var(--amber)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:16px}
+label.q{display:block;font-weight:700;margin:14px 0 6px}
+input[type=text]{width:100%;background:#0c0c10;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:12px 14px;font-size:1rem}
+.use{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;margin:8px 0;cursor:pointer}
+.use input{margin-top:4px}
+.use small{color:var(--mut)}
+button.go{width:100%;margin-top:16px;background:var(--amber);border:0;color:#14100a;font-weight:800;font-size:1.05rem;border-radius:10px;padding:14px;cursor:pointer}
+button.go:hover{filter:brightness(1.08)}
+#answer{margin-top:18px}
+.verdict{font-size:1.25rem;font-weight:800;margin:0 0 4px}
+.verdict.info-ready{color:var(--green)}.verdict.cannot-verify{color:var(--red)}
+.fact{border-left:3px solid var(--line);padding:8px 12px;margin:10px 0;background:#131318;border-radius:0 8px 8px 0}
+.tier{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.05em;padding:2px 9px;border-radius:999px;border:1px solid;margin-right:8px}
+.t-documented{color:var(--green);border-color:var(--green)}
+.t-stated-position{color:var(--blue);border-color:var(--blue)}
+.t-press-claimed{color:var(--amber);border-color:var(--amber)}
+.t-unverified{color:var(--red);border-color:var(--red)}
+.meta{font-size:.76rem;color:var(--mut);margin-top:4px}
+.steps{margin:10px 0;padding-left:20px}.steps li{margin:8px 0}
+h2.sec{font-size:1.05rem;margin:20px 0 6px;color:var(--amber)}
+.gaps{font-size:.86rem;color:var(--mut)}
+footer{margin-top:30px;font-size:.78rem;color:var(--mut);text-align:center}
+a{color:var(--blue)}
+.suggest{color:var(--amber);font-weight:600}
+.count{font-size:.78rem;color:var(--mut);text-align:center;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Can I flip this loop?</h1>
+  <p class="tag">The sample-clearance checker · Cumulative Web Inc</p>
+</header>
+
+<div class="banner" role="note"><strong>INFORMATION ONLY — NOT LEGAL ADVICE.</strong>
+This tool reports what CWI can verify from its own records. It does not grant
+permission, clear samples, or assess legal risk. Do not sample, interpolate, or
+release without written clearance from the rights holders. Consult a licensed attorney.</div>
+
+<div class="panel">
+  <label class="q" for="track">1 · Which track?</label>
+  <input type="text" id="track" list="tracks" placeholder="e.g. Zooted Zone" autocomplete="off">
+  <datalist id="tracks"><option value="Zooted Zone">
+<option value="Diabolique">
+<option value="Flamerz">
+<option value="Idol or Icon">
+<option value="Shaka Zulu">
+<option value="Doves &amp; Diamonds"></datalist>
+  <label class="q">2 · What do you want to do with it?</label>
+  <label class="use"><input type="radio" name="use" value="cover" checked>
+        <span><strong>Cover (your own recording of the song)</strong><br><small>A cover uses no original audio. In the US, audio-only releases are typically covered by a mechanical license through your distributor; video/sync uses need direct publishing clearance. CWI's publishing data is unverified — confirm the publisher with Business Affairs first.</small></span></label>
+<label class="use"><input type="radio" name="use" value="interpolate">
+        <span><strong>Interpolation (re-record the melody/lyrics)</strong><br><small>Interpolation creates a new master recording, but the underlying composition still belongs to its writers. You need publishing clearance from the writers/publishers, in writing, before release.</small></span></label>
+<label class="use"><input type="radio" name="use" value="sample">
+        <span><strong>Sample (use the original recording)</strong><br><small>Sampling uses the master recording. That means two separate permissions, both in writing, before release: the master (usually the label) AND the publishing (the writers and publishers).</small></span></label>
+  <button class="go" id="go">Check what CWI can verify</button>
+  <div class="count" id="count"></div>
+</div>
+
+<div id="answer" aria-live="polite"></div>
+
+<div class="panel gaps">
+  <h2 class="sec">What CWI cannot verify right now</h2>
+  <p>Honest gaps in our records (reviewed <span id="gapsdate"></span>, source: Business Affairs rights review):</p>
+  <ul id="gapslist"></ul>
+  <p>These gaps are why most answers end at Business Affairs — the documents have to exist before anyone can rely on them.</p>
+</div>
+
+<footer>
+  <p>Published by Cumulative Web Inc · Business Affairs: <a href="mailto:hp@cumulativeweb.com">hp@cumulativeweb.com</a></p>
+  <p>Every fact carries its evidence tier and observation date. Unverifiable questions fail closed.</p>
+</footer>
+</div>
+
+<script id="rights-data" type="application/json">{"banner":"INFORMATION ONLY — NOT LEGAL ADVICE. This tool reports what Cumulative Web Inc can verify from its own records. It does not grant permission, clear samples, or assess legal risk. Do not sample, interpolate, or release without written clearance from the rights holders. Consult a licensed attorney.","built_at":"2026-09-19","clearance_path":["Email CWI Business Affairs at hp@cumulativeweb.com — state the track, the exact portion you want to use, and the use type (sample, interpolation, or cover).","Business Affairs prepares a checklist of the documents needed (split sheets, master-control docs, sample attestations). They do not draft legal language or certify rights.","Clearance is granted in writing by the rights holders; a licensed attorney executes the license.","Do not release, distribute, or perform the new work until written clearance is in hand."],"contact":{"email":"hp@cumulativeweb.com","name":"CWI Business Affairs","observed_at":"2026-09-15","role":"Prepares checklists and tracks rights documents. Does NOT draft legal language, file, sign, or certify rights — a licensed attorney and Black execute.","source":"cwi-company/affairs/rights-gaps.md"},"ethics":"Information only. Never legal advice. Every answer hands off to CWI Business Affairs. Unverifiable questions fail closed.","global_gaps":{"items":["ISRC inventory (per track) — missing; distributors and sync buyers key everything to ISRCs.","Writer / publishing splits — no signed split sheets on file for any track.","PRO affiliation — which performing-rights org covers the works is unknown; no publisher/work registration numbers on file.","Sample clearance status — no clearance letters and no sworn no-sample attestations on file for any track.","Master-control documentation — chain-of-title showing CWI/Black controls the masters is missing."],"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md"},"product":"Sample-clearance checker (backlog #16)","schema":"cwi.sample-clearance/1.0","tracks":[{"aliases":["zootedzone"],"facts":[{"observed_at":"2026-09-15","source":"CWI Medium articles (memory import 2026-09-15)","text":"Production credit on record: produced by Kokurcho; mixed/mastered by Hybrid at his Hagerstown, MD studio; recorded Hagerstown, Feb 2023.","tier":"press-claimed"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"A production credit is not a rights-holder record. The verified rights holders of the master and publishing cannot be confirmed from CWI's records.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"CWI's stated position: Black states CWI controls the masters and label music. No chain-of-title documentation is on file, so this cannot be verified.","tier":"stated-position"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"PRO affiliation: unknown. No publisher or work registration numbers on file.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"Sample attestation: no clearance letters and no sworn no-sample statement on file.","tier":"unverified"}],"spotify_id_observed_at":"2026-09-16","spotify_track_id":"0emH8ktA8x4DkOFLsG5xkW","title":"Zooted Zone"},{"aliases":["diabolique"],"facts":[{"observed_at":"2026-09-15","source":"MEMORY.md (owner-confirmed 2026-09-15)","text":"Production credit on record: produced by Hybrid, co-produced with Black.","tier":"stated-position"},{"observed_at":"2026-09-18","source":"PRODUCT-BACKLOG.md #20","text":"Writer/publishing splits: UNVERIFIED as of 2026-09-18. No split percentages exist in CWI's records — any percentage you see elsewhere is not from us.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"The verified rights holders of the master and publishing cannot be confirmed from CWI's records.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"PRO affiliation: unknown. No publisher or work registration numbers on file.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"Sample attestation: no clearance letters and no sworn no-sample statement on file.","tier":"unverified"}],"spotify_id_observed_at":"2026-09-16","spotify_track_id":"2eSyWmIdPzEMyWejLb2LBj","title":"Diabolique"},{"aliases":["flamerz"],"facts":[{"observed_at":"2026-09-15","source":"MEMORY.md (owner-confirmed 2026-09-15)","text":"Production credit on record: producer is Jeck Da General (owner-confirmed 2026-09-15). A production credit is not a rights-holder record.","tier":"stated-position"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"The verified rights holders of the master and publishing cannot be confirmed from CWI's records.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"PRO affiliation: unknown. Sample attestation: none on file.","tier":"unverified"}],"title":"Flamerz"},{"aliases":["idol or icon","idol-or-icon"],"facts":[{"observed_at":"2026-09-15","source":"memory/people/jeck-da-general.md","text":"Production credit on record: co-produced by Black with Jeck Da General. A production credit is not a rights-holder record.","tier":"stated-position"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"Writer/publishing splits: no signed split sheets on file. Split percentages are unknown.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"The verified rights holders of the master and publishing cannot be confirmed from CWI's records.","tier":"unverified"},{"observed_at":"2026-09-15","source":"cwi-company/affairs/rights-gaps.md","text":"PRO affiliation: unknown. Sample attestation: none on file.","tier":"unverified"}],"title":"Idol or Icon"},{"aliases":["shaka zulu","shakazulu"],"facts":[{"observed_at":"2026-09-19","source":"cwi.sample-clearance/1.0 data review","text":"No credits or rights information for this track is on file in CWI's records. Nothing about its rights holders, splits, PRO affiliation, or sample status can be verified.","tier":"unverified"}],"title":"Shaka Zulu"},{"aliases":["doves & diamonds","doves and diamonds","dovesdiamonds"],"facts":[{"observed_at":"2026-09-19","source":"cwi.sample-clearance/1.0 data review","text":"No credits or rights information for this track is on file in CWI's records. Nothing about its rights holders, splits, PRO affiliation, or sample status can be verified.","tier":"unverified"}],"title":"Doves & Diamonds"}],"use_types":{"cover":{"label":"Cover (your own recording of the song)","note":"A cover uses no original audio. In the US, audio-only releases are typically covered by a mechanical license through your distributor; video/sync uses need direct publishing clearance. CWI's publishing data is unverified — confirm the publisher with Business Affairs first."},"interpolate":{"label":"Interpolation (re-record the melody/lyrics)","note":"Interpolation creates a new master recording, but the underlying composition still belongs to its writers. You need publishing clearance from the writers/publishers, in writing, before release."},"sample":{"label":"Sample (use the original recording)","note":"Sampling uses the master recording. That means two separate permissions, both in writing, before release: the master (usually the label) AND the publishing (the writers and publishers)."}}}</script>
+<script>window.__CWI_RIGHTS_DATA__ = JSON.parse(document.getElementById('rights-data').textContent);</script>
+<script src="engine.js"></script>
+<script>
+(function(){
+  var D = window.__CWI_RIGHTS_DATA__;
+  document.getElementById('gapsdate').textContent = D.global_gaps.observed_at;
+  document.getElementById('gapslist').innerHTML =
+    D.global_gaps.items.map(function(g){
+      return '<li>' + g.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</li>';
+    }).join('');
+
+  var KEY = 'cwi-sample-checks';
+  function getCount(){ try { return parseInt(localStorage.getItem(KEY) || '0', 10) || 0; } catch(e){ return 0; } }
+  function showCount(){
+    var n = getCount();
+    document.getElementById('count').textContent =
+      n ? ('Checks run in this browser: ' + n + ' (page visits are counted toward the 90-day kill rule)') : '';
+  }
+  showCount();
+
+  function escHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function tierBadge(tier){
+    var labels = {'documented':'DOCUMENTED','stated-position':'STATED POSITION','press-claimed':'PRESS-CLAIMED','unverified':'UNVERIFIED'};
+    return '<span class="tier t-' + tier + '">' + (labels[tier] || tier) + '</span>';
+  }
+
+  document.getElementById('go').addEventListener('click', function(){
+    var q = document.getElementById('track').value;
+    var use = (document.querySelector('input[name=use]:checked') || {}).value || 'sample';
+    var a;
+    try { a = check(q, use, D); }
+    catch(e){ a = null; }
+    var box = document.getElementById('answer');
+    if(!a){ box.innerHTML = '<div class="panel"><p class="verdict cannot-verify">Something went wrong.</p><p>Contact Business Affairs: <a href="mailto:hp@cumulativeweb.com">hp@cumulativeweb.com</a></p></div>'; return; }
+    try { localStorage.setItem(KEY, String(getCount() + 1)); } catch(e){}
+    showCount();
+
+    var vLabel = a.verdict === 'info-ready' ? 'What CWI can verify' : 'Cannot verify';
+    var vClass = a.verdict === 'info-ready' ? 'info-ready' : 'cannot-verify';
+    var facts = (a.facts || []).map(function(f){
+      return '<div class="fact">' + tierBadge(f.tier) +
+        '<div>' + escHtml(f.text) + '</div>' +
+        '<div class="meta">Observed ' + escHtml(f.observed_at) + ' · Source: ' + escHtml(f.source) + '</div></div>';
+    }).join('');
+    var unknown = (a.unknown || []).map(function(u){
+      return '<li>' + escHtml(u) + '</li>';
+    }).join('');
+    var steps = (a.clearance_path || []).map(function(s){
+      return '<li>' + escHtml(s) + '</li>';
+    }).join('');
+
+    box.innerHTML =
+      '<div class="panel">' +
+      '<p class="verdict ' + vClass + '">' + escHtml(vLabel) + (a.title ? ' — ' + escHtml(a.title) : '') + '</p>' +
+      '<div class="banner" role="note"><strong>INFORMATION ONLY — NOT LEGAL ADVICE.</strong> ' +
+      escHtml(a.banner.split('. ').slice(1).join('. ')) + '</div>' +
+      (facts ? '<h2 class="sec">Verifiable facts</h2>' + facts : '') +
+      (a.note ? '<p class="suggest">' + escHtml(a.note) + '</p>' : '') +
+      (unknown ? '<h2 class="sec">What cannot be verified</h2><ul class="steps">' + unknown + '</ul>' : '') +
+      '<h2 class="sec">About this use: ' + escHtml(a.use_type_label) + '</h2><p>' + escHtml(a.use_type_note) + '</p>' +
+      '<h2 class="sec">The clearance path</h2><ol class="steps">' + steps + '</ol>' +
+      '<p>Start here: <a href="mailto:' + escHtml(a.contact.email) + '?subject=' +
+        encodeURIComponent('Clearance inquiry') + '">' + escHtml(a.contact.email) + '</a> (' + escHtml(a.contact.name) + ')</p>' +
+      '</div>';
+    box.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  document.getElementById('track').addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ document.getElementById('go').click(); }
+  });
+})();
+</script>
+</body>
+</html>
