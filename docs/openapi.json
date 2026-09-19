@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Sample Clearance API",
+    "version": "1.0.0",
+    "description": "Clearance workflow support for the CWI catalog: structured tracking of sample-clearance state. Unsupported clearance claims stay fail-closed \u2014 nothing is marked cleared without evidence. Public read-only API. All endpoints are static files served over HTTPS GET via GitHub Pages. No authentication required.",
+    "contact": {
+      "name": "Cumulative Web Inc",
+      "url": "https://cumulativeweb.com",
+      "email": "hp@cumulativeweb.com"
+    },
+    "license": {
+      "name": "See https://cumulativewebinc.github.io/cwi-legal/terms.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://cumulativewebinc.github.io/cwi-sample-clearance",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getProductPage",
+        "summary": "Product page",
+        "description": "Sample clearance UI",
+        "responses": {
+          "200": {
+            "description": "Product page",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
